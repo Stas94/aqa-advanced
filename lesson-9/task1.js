@@ -1,11 +1,11 @@
 
-const student = {
-  name: {
-    firstName: "John",
-    lastName: "Smith",
-  },
-  age: 25,
-  courses: ["Математика", "Історія", "Програмування"],
-};
+const student = {};
+
+student.name = {
+  firstName: "John",
+  lastName: "Smith",
+}
+student.age = 25;
+student.courses = ["Математика", "Історія", "Програмування"];
 
 console.log(student);
