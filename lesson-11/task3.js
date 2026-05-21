@@ -1,7 +1,7 @@
 
-async function fetchTodo() {
+async function fetchTodo(id) {
   try {
-    const response = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+    const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`);
     const data = await response.json();
     return data;
   } catch (error) {
@@ -10,9 +10,9 @@ async function fetchTodo() {
 }
 
 
-async function fetchUser() {
+async function fetchUser(id) {
   try {
-    const response = await fetch('https://jsonplaceholder.typicode.com/users/1');
+    const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
     const data = await response.json();
     return data;
   } catch (error) {
@@ -24,12 +24,12 @@ async function fetchUser() {
 async function handlePromises() {
   try {
     
-    const allResults = await Promise.all([fetchTodo(), fetchUser()]);
+    const allResults = await Promise.all([fetchTodo(1), fetchUser(1)]);
     console.log('Promise.all результат:');
     console.log('Todo:', allResults[0]);
     console.log('User:', allResults[1]);
 
-    const raceResult = await Promise.race([fetchTodo(), fetchUser()]);
+    const raceResult = await Promise.race([fetchTodo(1), fetchUser(1)]);
     console.log('\nPromise.race результат (перший завершений запит):');
     console.log(raceResult);
 

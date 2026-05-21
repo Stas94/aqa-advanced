@@ -1,17 +1,17 @@
 
-function fetchTodo() {
-  return fetch('https://jsonplaceholder.typicode.com/todos/1')
+function fetchTodo(id) {
+  return fetch(`https://jsonplaceholder.typicode.com/todos/${id}`)
     .then(response => response.json());
 }
 
 
-function fetchUser() {
-  return fetch('https://jsonplaceholder.typicode.com/users/1')
+function fetchUser(id) {
+  return fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
     .then(response => response.json());
 }
 
 
-const allPromise = Promise.all([fetchTodo(), fetchUser()])
+const allPromise = Promise.all([fetchTodo(1), fetchUser(1)])
   .then(results => {
     console.log('Promise.all результат:');
     console.log('Todo:', results[0]);
@@ -23,7 +23,7 @@ const allPromise = Promise.all([fetchTodo(), fetchUser()])
   });
 
 
-const racePromise = Promise.race([fetchTodo(), fetchUser()])
+const racePromise = Promise.race([fetchTodo(1), fetchUser(1)])
   .then(result => {
     console.log('Promise.race результат (перший завершений запит):');
     console.log(result);
