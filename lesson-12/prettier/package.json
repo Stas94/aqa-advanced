@@ -1,0 +1,12 @@
+{
+    "name": "prettier",
+    "version": "1.0.0",
+    "main": "task2.js",
+    "scripts": {
+        "prettier:check": "prettier . --check",
+        "prettier:fix": "prettier . --write"
+    },
+    "devDependencies": {
+        "prettier": "^3.8.3"
+    }
+}
