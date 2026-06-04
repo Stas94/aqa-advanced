@@ -1,0 +1,15 @@
+{
+  "name": "lesson-14",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "dependencies": {
+    "axios": "^1.16.1"
+  },
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js" 
+  },
+  "devDependencies": {
+    "jest": "^30.4.2"
+  }
+}
